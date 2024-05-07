@@ -1,0 +1,1 @@
+/usr/bin/c++  -O2 -g -DNDEBUG   CMakeFiles/communication_test.dir/src/communication_test.cpp.o  -o communication_test  -Wl,-rpath,/home/masais/ziyu/robotControlProgram/build/libfranka libfranka/examples/libexamples_common.a libfranka/libfranka.so.0.9.0 

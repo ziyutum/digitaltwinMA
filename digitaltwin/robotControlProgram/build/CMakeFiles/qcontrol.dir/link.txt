@@ -1,0 +1,1 @@
+/usr/bin/c++  -O2 -g -DNDEBUG   CMakeFiles/qcontrol.dir/src/qcontrol.cpp.o  -o qcontrol  -Wl,-rpath,/home/masais/ziyu/robotControlProgram/build/libfranka libfranka/examples/libexamples_common.a libfranka/libfranka.so.0.9.0 
