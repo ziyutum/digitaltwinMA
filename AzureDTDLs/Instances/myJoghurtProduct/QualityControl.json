@@ -1,0 +1,4 @@
+{"$dtId":"QualityControl", 
+"$etag":"W/\"dummy-etag\"", 
+"kind": {"$metadata":{}},
+"$metadata": {"$model":"dtmi:digitaltwins:aas:Submodel;1"}}
