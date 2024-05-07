@@ -1,0 +1,1 @@
+/usr/bin/c++  -O2 -g -DNDEBUG   CMakeFiles/chessV2.dir/src/chessV2.cpp.o  -o chessV2  -Wl,-rpath,/home/masais/ziyu/robotControlProgram/build/libfranka libfranka/examples/libexamples_common.a libfranka/libfranka.so.0.9.0 
