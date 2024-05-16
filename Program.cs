@@ -48,18 +48,18 @@ namespace uploadDTtoAzure
 
 
             // // get all model files
-            get_all_model_files();
-            Console.WriteLine("\nSuccessfully read all model files. ");
+            //get_all_model_files();
+            //Console.WriteLine("\nSuccessfully read all model files. ");
             // // upload all models in Azure
-            await client.CreateModelsAsync(allModelStrings);
-            Console.WriteLine("Successfully uploaded all models.");
+            //await client.CreateModelsAsync(allModelStrings);
+            //Console.WriteLine("Successfully uploaded all models.");
 
             delete_all(client);
             Console.WriteLine("Press any key to stop");
             Console.ReadKey();
 
             upload_instances_rels(client);
-            Console.WriteLine("Press any key to stop");
+            Console.WriteLine("Starting,Press any key to stop");
             Console.ReadKey();
 
         }
