@@ -1,9 +1,3 @@
-'''
-This program conversts the aas package file (.aasx) to an
-input file for Azure DT in the JSON format.
-Author: Josua Höfgen
-Date: 26.05.2022
-'''
 
 from basyx.aas import model
 import basyx.aas.adapter.aasx
@@ -126,6 +120,12 @@ class DTDLInstanceCreator:
                 self.instanceString += ','
                 self.allInstances.append(self.createOperationalVariableInstance(obj, parent_operation))
                 self.allInstanceNames.append(str("OpVar"+obj.value.id_short+parent_operation)) 
+            #ziyu added entity
+            elif isinstance(obj, model.Entity):                        
+                self.instanceString += self.createEntityInstance(obj)
+                self.instanceString += ','
+                self.allInstances.append(self.createEntityInstance(obj))
+                self.allInstanceNames.append(str(obj.id_short))
 
     def createAASInstance(self, aas : model.AssetAdministrationShell):
         '''
@@ -209,6 +209,15 @@ class DTDLInstanceCreator:
 				f'"$metadata":{{"$model":"dtmi:digitaltwins:aas:Property;1"}}'
                 # f'"$metadata":{{"$model":"dtmi:digitaltwins:aas:OperationVariable;1"}}'
 			    f'}}')
+    # ziyu added entity 
+    def createEntityInstance(self, prop : model.Entity):
+        
+        return (f'{{"$dtId":"{prop.id_short}", \n'
+				f'"$etag":"W/\\"6030225d-b379-4134-beea-ea2af2a16c34\\"", \n'
+				#f'"value":"{prop.value}", \n'
+				#f'"valueType":"{prop.value_type}", \n'
+				f'"kind":{{"$metadata":{{}}}}, \n'
+				f'"$metadata":{{"$model":"dtmi:digitaltwins:aas:Entity;1"}} }}')
 
     def writeInstanceFiles(self, folder_name):        
         
@@ -412,7 +421,11 @@ def load_aas_data(package_name):
 
 
 if __name__=="__main__":
-    package_name = "aasCreations/02_Storage_Zone_AAS.aasx"
+    
+    #package_name = "aasCreations/06_Bottle_Switch_AAS.aasx"
+    #package_name = "aasCreations/02_Storage_Zone_AAS.aasx"
+
+    #06_Bottle_Switch_AAS
     #package_name = "aasCreations/Manual_Panda_AAS/ManualPandaPackage.aasx"
     #package_name = "aasCreations/Automated_Panda_AAS/AutomatedPandaPackage.aasx"
     object_store, file_store = load_aas_data(package_name=package_name)
