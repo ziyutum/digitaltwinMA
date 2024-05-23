@@ -297,6 +297,12 @@ class TwinGraphRelationshipCreator:
                                 next_rel_id = elm.id_short+subelm.id_short+str(self.relationships_counter)
                                 next_etag = "etag" + str(self.relationships_counter)
                                 self.allRelationships.append(self.create_next_instance_string("value", next_rel_id, elm.id_short, subelm.id_short, next_etag))
+                            # ziyu added entity relationshios
+                            if isinstance(subelm, model.Entity):
+                                self.relationships_counter += 1
+                                next_rel_id = elm.id_short+subelm.id_short+str(self.relationships_counter)
+                                next_etag = "etag" + str(self.relationships_counter)
+                                self.allRelationships.append(self.create_next_instance_string("value", next_rel_id, elm.id_short, subelm.id_short, next_etag))   
 
                             # Relationship elements are only considered in the graph as lines if explicitly defined.
                             if isinstance(subelm, model.RelationshipElement) and self.explicitRelationships:
