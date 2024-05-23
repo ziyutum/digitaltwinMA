@@ -26,7 +26,7 @@ namespace uploadDTtoAzure
 {
     class Program
     {
-        static string adtInstanceUrl = "https://..................";
+        static string adtInstanceUrl = "https://FrankaMyJoghurtDTCreation.api.weu.digitaltwins.azure.net";
 
         static List<string> allModelPaths = new List<string>();
         static List<string> allInstanceStrings = new List<string>();
@@ -40,7 +40,13 @@ namespace uploadDTtoAzure
         static List<string> allModelStrings = new List<string>();
         static List<BasicDigitalTwin> allInstances = new List<BasicDigitalTwin>();
 
-        static void  Main(string[] args)
+//  await fuction needs aszn  The 'await' operator can only be used within an async method. Consider marking this method with the 'async' modifier and changing its return type to 'Task'.
+ //A void or int returning entry point cannot be async
+ // after adding async Task Main(string[] args) the error is gone
+ //after uploading the model, the model is now shown in the Azure Digital Twins Explorer
+ //we don't need to upload the model again, if we want to upload the model again, we need to delete the model first
+ //after uploading the model, we can chane the asyn Task Main to static void Main in order to delete the instances and relationships firstly
+        static void Main(string[] args)
         {
             var credential = new DefaultAzureCredential();
             DigitalTwinsClient client = new DigitalTwinsClient(new Uri(adtInstanceUrl), credential);
@@ -48,18 +54,18 @@ namespace uploadDTtoAzure
 
 
             // // get all model files
-            // get_all_model_files();
-            // Console.WriteLine("\nSuccessfully read all model files. ");
+            //get_all_model_files();
+            Console.WriteLine("\nSuccessfully read all model files. ");
             // // upload all models in Azure
-            // await client.CreateModelsAsync(allModelStrings);
-            // Console.WriteLine("Successfully uploaded all models.");
+            //await client.CreateModelsAsync(allModelStrings);
+            Console.WriteLine("Successfully uploaded all models.");
 
             delete_all(client);
-            Console.WriteLine("Press any key to stop");
+            Console.WriteLine("Start Deleting. Press any key to stop");
             Console.ReadKey();
-
+        
             upload_instances_rels(client);
-            Console.WriteLine("Press any key to stop");
+            Console.WriteLine("Start Uploading. Press any key to stop");
             Console.ReadKey();
 
         }
