@@ -328,7 +328,19 @@ class TwinGraphRelationshipCreator:
                                         self.relationships_counter += 1
                                         next_rel_id = subelm.id_short+subsubelm.id_short+str(self.relationships_counter)
                                         next_etag = "etag" + str(self.relationships_counter)
-                                        self.allRelationships.append(self.create_next_instance_string("value", next_rel_id, subelm.id_short, subsubelm.id_short, next_etag))   
+                                        self.allRelationships.append(self.create_next_instance_string("value", next_rel_id, subelm.id_short, subsubelm.id_short, next_etag))
+                                     #ziyu added new relationships
+                                    if isinstance(subsubelm, model.SubmodelElementCollection):
+                                        self.relationships_counter += 1
+                                        next_rel_id = subelm.id_short+subsubelm.id_short+str(self.relationships_counter)
+                                        next_etag = "etag" + str(self.relationships_counter)
+                                        self.allRelationships.append(self.create_next_instance_string("value", next_rel_id, subelm.id_short, subsubelm.id_short, next_etag))
+                                        for subsubsubelm in subsubelm:
+                                            if isinstance(subsubsubelm, model.Property):
+                                                self.relationships_counter += 1
+                                                next_rel_id = subsubelm.id_short+subsubsubelm.id_short+str(self.relationships_counter)
+                                                next_etag = "etag" + str(self.relationships_counter)
+                                                self.allRelationships.append(self.create_next_instance_string("value", next_rel_id, subsubelm.id_short, subsubsubelm.id_short, next_etag)) 
 
                     if isinstance(elm, model.Operation):
                         # Handel relation from submodel to operation 
