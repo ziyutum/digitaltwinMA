@@ -1,5 +1,28 @@
 # digitaltwin
-#WIFI Configuration
+
+C# dotnet run step
+1. dotnet new console -n MyFirstApp
+2. cd MyFirstApp
+3. open Program.cs file
+4. edit
+5. dotnet run
+   
+### Install .NET SDK:
+
+- Download and install the .NET SDK [here](https://dotnet.microsoft.com/download/dotnet).
+- After installation, you can verify the installation by running `dotnet --version` in the command line.
+
+### Install VS Code:
+
+- Download and install VS Code [here](https://code.visualstudio.com/).
+
+### Install C# Extension:
+
+- Open VS Code, go to the extensions panel (use the shortcut `Ctrl+Shift+X`).
+- Search for "C#" and install the extension provided by Microsoft.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+### WIFI Configuration
 1. check all the wlan infos
 uname -r
 5.15.0-105-generic
