@@ -1,6 +1,6 @@
 # digitaltwin
 
-C# dotnet run step
+### C# dotnet run step
 1. dotnet new console -n MyFirstApp
 2. cd MyFirstApp
 3. open Program.cs file
