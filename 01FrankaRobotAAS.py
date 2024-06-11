@@ -76,18 +76,18 @@ aas.submodel.add(model.AASReference.from_referable(submodel_2))
 
 # 1.smc robor arm
 smc_add = model.SubmodelElementCollectionOrdered(id_short="RobotArm", kind=model.ModelingKind.TEMPLATE)
-prop1 = model.Property(id_short="DegreesOfFreedome", value_type=model.datatypes.String, value="7")
-prop2 = model.Property(id_short="Payload", value_type=model.datatypes.String, value="3 kg")
-prop3 = model.Property(id_short="Sensitivities", value_type=model.datatypes.String, value="")
-prop4 = model.Property(id_short="MaximunReach", value_type=model.datatypes.String, value="855 mm")
-prop5 = model.Property(id_short="MaximumCartesianVelocity", value_type=model.datatypes.String, value="2 m/s")
-prop6 = model.Property(id_short="Repeatability", value_type=model.datatypes.String, value="+/- 0.1 mm")
-prop7 = model.Property(id_short="MountingFlange", value_type=model.datatypes.String, value="DIN ISO 9409-1-A50")
-prop8 = model.Property(id_short="InstallationPosition", value_type=model.datatypes.String, value="upright")
-prop9 = model.Property(id_short="MaximumWeight", value_type=model.datatypes.String, value="18 kg")
-prop10 = model.Property(id_short="ProtectionRating", value_type=model.datatypes.String, value="IP 30")
-prop11= model.Property(id_short="TypicalAmbientTemperature", value_type=model.datatypes.String, value="+15/+25 degree celsius")
-prop12= model.Property(id_short="ExtendedAmbientTemperature", value_type=model.datatypes.String, value="+5/+45 degree celsius")
+prop1 = model.Property(id_short="RobotDegreesOfFreedome", value_type=model.datatypes.String, value="7")
+prop2 = model.Property(id_short="RobotPayload", value_type=model.datatypes.String, value="3 kg")
+prop3 = model.Property(id_short="RobotSensitivities", value_type=model.datatypes.String, value="")
+prop4 = model.Property(id_short="RobotMaximunReach", value_type=model.datatypes.String, value="855 mm")
+prop5 = model.Property(id_short="RobotMaximumCartesianVelocity", value_type=model.datatypes.String, value="2 m/s")
+prop6 = model.Property(id_short="RobotRepeatability", value_type=model.datatypes.String, value="+/- 0.1 mm")
+prop7 = model.Property(id_short="RobotMountingFlange", value_type=model.datatypes.String, value="DIN ISO 9409-1-A50")
+prop8 = model.Property(id_short="RobotInstallationPosition", value_type=model.datatypes.String, value="upright")
+prop9 = model.Property(id_short="RobotMaximumWeight", value_type=model.datatypes.String, value="18 kg")
+prop10 = model.Property(id_short="RobotProtectionRating", value_type=model.datatypes.String, value="IP 30")
+prop11= model.Property(id_short="RobotTypicalAmbientTemperature", value_type=model.datatypes.String, value="+15/+25 degree celsius")
+prop12= model.Property(id_short="RobotExtendedAmbientTemperature", value_type=model.datatypes.String, value="+5/+45 degree celsius")
 
 
 prop=[prop1,prop2,prop3,prop4,prop5,prop6,prop7,prop8,prop9,prop10,prop11,prop12]
@@ -131,14 +131,14 @@ for i in prop:
 smc_add.value.add(smc_jvl)
 
 #create smc collection and add it to the submodel
-smc_int = model.SubmodelElementCollectionOrdered(id_short="Interfaces")
+smc_int = model.SubmodelElementCollectionOrdered(id_short="RobotInterfaces")
 
-prop1 = model.Property(id_short="NumberOfInterfaces", value_type=model.datatypes.String, value="5")
-prop2 = model.Property(id_short="TCP_IP", value_type=model.datatypes.String, value="")
-prop3 = model.Property(id_short="EnableDeviceInput", value_type=model.datatypes.String, value="")
-prop4 = model.Property(id_short="SafeguardInput", value_type=model.datatypes.String, value="")
-prop5 = model.Property(id_short="ControlConnector", value_type=model.datatypes.String, value="")
-prop6 = model.Property(id_short="HandConnector", value_type=model.datatypes.String, value="")
+prop1 = model.Property(id_short="Robot_NumberOfInterfaces", value_type=model.datatypes.String, value="5")
+prop2 = model.Property(id_short="Robot_TCP_IP", value_type=model.datatypes.String, value="")
+prop3 = model.Property(id_short="Robot_EnableDeviceInput", value_type=model.datatypes.String, value="")
+prop4 = model.Property(id_short="Robot_SafeguardInput", value_type=model.datatypes.String, value="")
+prop5 = model.Property(id_short="Robot_ControlConnector", value_type=model.datatypes.String, value="")
+prop6 = model.Property(id_short="Robot_HandConnector", value_type=model.datatypes.String, value="")
 
 
 prop=[prop1,prop2,prop3,prop4,prop5,prop6]
@@ -148,7 +148,7 @@ for i in prop:
 smc_add.value.add(smc_int)
 
 # 2.smc control box
-smc_add = model.SubmodelElementCollectionOrdered(id_short="ControlBox", kind=model.ModelingKind.TEMPLATE)
+smc_add = model.SubmodelElementCollectionOrdered(id_short="RobotControlBox", kind=model.ModelingKind.TEMPLATE)
 prop1 = model.Property(id_short="MinimumSupplyVoltage", value_type=model.datatypes.String, value="100 V")
 prop2 = model.Property(id_short="MaximumSupplyVoltage", value_type=model.datatypes.String, value="240 V")
 prop3 = model.Property(id_short="MainFrequency", value_type=model.datatypes.String, value="47-63 Hz")
@@ -166,12 +166,12 @@ for i in prop:
 submodel_2.submodel_element.add(smc_add)
 
 #create smc collection and add it to the submodel
-smc_inter = model.SubmodelElementCollectionOrdered(id_short="Interfaces")
+smc_inter = model.SubmodelElementCollectionOrdered(id_short="ControlBoxInterfaces")
 
-prop1 = model.Property(id_short="NumberOfPorts", value_type=model.datatypes.String, value="3")
-prop2 = model.Property(id_short="Ethernet_TCP_IP", value_type=model.datatypes.String, value="")
-prop3 = model.Property(id_short="V_Lock", value_type=model.datatypes.String, value="IEC 60320-C14")
-prop4 = model.Property(id_short="ArmConnector", value_type=model.datatypes.String, value="")
+prop1 = model.Property(id_short="Box_NumberOfPorts", value_type=model.datatypes.String, value="3")
+prop2 = model.Property(id_short="Box_Ethernet_TCP_IP", value_type=model.datatypes.String, value="")
+prop3 = model.Property(id_short="Box_V_Lock", value_type=model.datatypes.String, value="IEC 60320-C14")
+prop4 = model.Property(id_short="Box_ArmConnector", value_type=model.datatypes.String, value="")
 
 
 prop=[prop1,prop2,prop3,prop4]
@@ -181,11 +181,11 @@ for i in prop:
 smc_add.value.add(smc_inter)
 
 #create smc collection and add it to the submodel
-smc_cs = model.SubmodelElementCollectionOrdered(id_short="ControllerSize")
+smc_cs = model.SubmodelElementCollectionOrdered(id_short="BoxControllerSize")
 
-prop1 = model.Property(id_short="Depth", value_type=model.datatypes.String, value="355 mm")
-prop2 = model.Property(id_short="Width", value_type=model.datatypes.String, value="483 mm")
-prop3 = model.Property(id_short="Height", value_type=model.datatypes.String, value="89 mm")
+prop1 = model.Property(id_short="ControlBoxDepth", value_type=model.datatypes.String, value="355 mm")
+prop2 = model.Property(id_short="ControlBoxWidth", value_type=model.datatypes.String, value="483 mm")
+prop3 = model.Property(id_short="ControlBoxHeight", value_type=model.datatypes.String, value="89 mm")
 
 prop=[prop1,prop2,prop3]
 for i in prop:
@@ -223,7 +223,7 @@ smc_add.value.add(smc_at)
 
 # 3.smc robot hand
 smc_add = model.SubmodelElementCollectionOrdered(id_short="Robot_EndEffector", kind=model.ModelingKind.TEMPLATE)
-prop1 = model.Property(id_short="Weight", value_type=model.datatypes.String, value="7 kg")
+prop1 = model.Property(id_short="Robot_EndEffector_Weight", value_type=model.datatypes.String, value="7 kg")
 
 smc_add.value.add(prop1)
 
@@ -250,10 +250,10 @@ for i in prop:
 smc_add.value.add(smc_gf)
 
 #create smc collection and add it to the submodel
-smc_travel = model.SubmodelElementCollectionOrdered(id_short="Travel")
+smc_travel = model.SubmodelElementCollectionOrdered(id_short="Gripper_Travel")
 
-prop1 = model.Property(id_short="TravelingSpan", value_type=model.datatypes.String, value="80 mm")
-prop2 = model.Property(id_short="TravelingSpeedPerFinger", value_type=model.datatypes.String, value="50 mm/s")
+prop1 = model.Property(id_short="Gripper_TravelingSpan", value_type=model.datatypes.String, value="80 mm")
+prop2 = model.Property(id_short="Gripper_TravelingSpeedPerFinger", value_type=model.datatypes.String, value="50 mm/s")
 
 
 
@@ -266,9 +266,9 @@ smc_add.value.add(smc_travel)
 #create smc collection and add it to the submodel
 smc_ft = model.SubmodelElementCollectionOrdered(id_short="Footprint")
 
-prop1 = model.Property(id_short="OverallLength", value_type=model.datatypes.String, value="190 mm")
-prop2 = model.Property(id_short="OverallWidth", value_type=model.datatypes.String, value="226 mm")
-prop3 = model.Property(id_short="OverallHeight", value_type=model.datatypes.String, value="10 mm")
+prop1 = model.Property(id_short="Footprint_OverallLength", value_type=model.datatypes.String, value="190 mm")
+prop2 = model.Property(id_short="Footprint_OverallWidth", value_type=model.datatypes.String, value="226 mm")
+prop3 = model.Property(id_short="Footprint_OverallHeight", value_type=model.datatypes.String, value="10 mm")
 
 
 
@@ -411,14 +411,14 @@ smc_add.value.add(smc_read)
 smc_add = model.SubmodelElementCollectionOrdered(id_short="CartesianMotionFunction", kind=model.ModelingKind.TEMPLATE)
 
 
-prop1 = model.Property(id_short="StartTime", value_type=model.datatypes.String, value="0.0")
-prop2 = model.Property(id_short="EndTime", value_type=model.datatypes.String, value="")
-prop3 = model.Property(id_short="CurrentPose", value_type=model.datatypes.String, value="")
-prop4 = model.Property(id_short="kRadius", value_type=model.datatypes.String, value= "")
-prop5 = model.Property(id_short="Angle", value_type=model.datatypes.String, value="")
-prop6 = model.Property(id_short="DeltaX", value_type=model.datatypes.String, value="")
-prop7 = model.Property(id_short="DeltaY", value_type=model.datatypes.String, value="")
-prop8 = model.Property(id_short="DeltaZ", value_type=model.datatypes.String, value="")
+prop1 = model.Property(id_short="CMF_StartTime", value_type=model.datatypes.String, value="0.0")
+prop2 = model.Property(id_short="CMF_EndTime", value_type=model.datatypes.String, value="")
+prop3 = model.Property(id_short="CMF_CurrentPose", value_type=model.datatypes.String, value="")
+prop4 = model.Property(id_short="CMF_kRadius", value_type=model.datatypes.String, value= "")
+prop5 = model.Property(id_short="CMF_Angle", value_type=model.datatypes.String, value="")
+prop6 = model.Property(id_short="CMF_DeltaX", value_type=model.datatypes.String, value="")
+prop7 = model.Property(id_short="CMF_DeltaY", value_type=model.datatypes.String, value="")
+prop8 = model.Property(id_short="CMF_DeltaZ", value_type=model.datatypes.String, value="")
 
 
 
@@ -429,10 +429,10 @@ for i in prop:
 submodel_3.submodel_element.add(smc_add)
 
 #create smc collection and add it to the submodel collection
-smc_motion = model.SubmodelElementCollectionOrdered(id_short="MotionGenerator")
+smc_motion = model.SubmodelElementCollectionOrdered(id_short="RobotMotionGenerator")
 smc_add.value.add(smc_motion)
 
-prop1 = model.Property(id_short="MotionSpeed", value_type=model.datatypes.String, value="")
+prop1 = model.Property(id_short="RobotMotionSpeed", value_type=model.datatypes.String, value="")
 smc_motion.value.add(prop1)
 
 smc_goal = model.SubmodelElementCollectionOrdered(id_short="JointGoal")
@@ -463,12 +463,12 @@ smc_add = model.SubmodelElementCollectionOrdered(id_short="GraspingFunction", ki
 
 submodel_3.submodel_element.add(smc_add)
 
-prop1 = model.Property(id_short="Grasp", value_type=model.datatypes.String, value="")
-prop2 = model.Property(id_short="Width", value_type=model.datatypes.String, value="")
-prop3 = model.Property(id_short="Speed", value_type=model.datatypes.String, value="")
-prop4 = model.Property(id_short="Force", value_type=model.datatypes.String, value= "")
-prop5 = model.Property(id_short="EpsilonInner", value_type=model.datatypes.String, value= "0.005 m")
-prop6 = model.Property(id_short="EpsilonOuter", value_type=model.datatypes.String, value= "0.005 m")
+prop1 = model.Property(id_short="Gripper_Grasp", value_type=model.datatypes.String, value="")
+prop2 = model.Property(id_short="Gripper_Width", value_type=model.datatypes.String, value="")
+prop3 = model.Property(id_short="Gripper_Speed", value_type=model.datatypes.String, value="")
+prop4 = model.Property(id_short="Gripper_Force", value_type=model.datatypes.String, value= "")
+prop5 = model.Property(id_short="Gripper_EpsilonInner", value_type=model.datatypes.String, value= "0.005 m")
+prop6 = model.Property(id_short="Gripper_EpsilonOuter", value_type=model.datatypes.String, value= "0.005 m")
 
 prop=[prop1,prop2,prop3,prop4,prop5,prop6]
 
@@ -480,7 +480,7 @@ smc_add = model.SubmodelElementCollectionOrdered(id_short="GripperHoming", kind=
 
 submodel_3.submodel_element.add(smc_add)
 
-prop = model.Property(id_short="Homing", value_type=model.datatypes.Boolean, value=1)
+prop = model.Property(id_short="Gripper_Homing", value_type=model.datatypes.Boolean, value=1)
 smc_add.value.add(prop)
 
 # 8. smc homing
@@ -488,7 +488,7 @@ smc_add = model.SubmodelElementCollectionOrdered(id_short="RobotPoseHoming", kin
 
 submodel_3.submodel_element.add(smc_add)
 
-prop = model.Property(id_short="Homing", value_type=model.datatypes.Boolean, value=1)
+prop = model.Property(id_short="RobotPose_Homing", value_type=model.datatypes.Boolean, value=1)
 smc_add.value.add(prop)
 
 #############################################################################################################################################################################################
@@ -506,7 +506,7 @@ aas.submodel.add(model.AASReference.from_referable(submodel_4))
 
 
 #4.1 add prpperty to this submodel
-property_OperatingTime = model.Property(id_short="TotalOperatingTime", value_type=model.datatypes.Duration, value=None)
+property_OperatingTime = model.Property(id_short="Robot_TotalOperatingTime", value_type=model.datatypes.Duration, value=None)
 submodel_4.submodel_element.add(property_OperatingTime)
 
 #4.2 smc 
@@ -618,12 +618,12 @@ for i in range(7):
 smc_add = model.SubmodelElementCollectionOrdered(id_short="GripperData")
 submodel_4.submodel_element.add(smc_add)
 
-prop1 = model.Property(id_short="Width", value_type=model.datatypes.String, value="")
-prop2 = model.Property(id_short="MaxWidth", value_type=model.datatypes.String, value="")
-prop3 = model.Property(id_short="Speed", value_type=model.datatypes.String, value="")
-prop4 = model.Property(id_short="IsGrasped", value_type=model.datatypes.String, value= "")
-prop5 = model.Property(id_short="GripperDurationTime", value_type=model.datatypes.String, value= "0.005 m")
-prop6 = model.Property(id_short="GripperModel", value_type=model.datatypes.String, value= "0.005 m")
+prop1 = model.Property(id_short="GripperData_Width", value_type=model.datatypes.String, value="")
+prop2 = model.Property(id_short="GripperData_MaxWidth", value_type=model.datatypes.String, value="")
+prop3 = model.Property(id_short="GripperData_Speed", value_type=model.datatypes.String, value="")
+prop4 = model.Property(id_short="GripperData_IsGrasped", value_type=model.datatypes.String, value= "")
+prop5 = model.Property(id_short="GripperData_GripperDurationTime", value_type=model.datatypes.String, value= "0.005 m")
+prop6 = model.Property(id_short="GripperData_GripperModel", value_type=model.datatypes.String, value= "0.005 m")
 
 prop=[prop1,prop2,prop3,prop4,prop5,prop6]
 
@@ -748,25 +748,25 @@ submodel_6 = model.Submodel(identification=submodel_identifier_Components,
                                                 semantic_id=semantic_reference, kind=model.ModelingKind.TEMPLATE)
 aas.submodel.add(model.AASReference.from_referable(submodel_6))
 #   6.1- 6.5 add smc to this submodel
-smc_add = model.SubmodelElementCollectionOrdered(id_short="Base")
+smc_add = model.SubmodelElementCollectionOrdered(id_short="Robot_Base")
 submodel_6.submodel_element.add(smc_add)
-smc_add = model.SubmodelElementCollectionOrdered(id_short="StatusLight")
+smc_add = model.SubmodelElementCollectionOrdered(id_short="Robot_StatusLight")
 submodel_6.submodel_element.add(smc_add)
-smc_add = model.SubmodelElementCollectionOrdered(id_short="Shoulder")
+smc_add = model.SubmodelElementCollectionOrdered(id_short="Robot_Shoulder")
 submodel_6.submodel_element.add(smc_add)
-smc_add = model.SubmodelElementCollectionOrdered(id_short="SoftProtector")
+smc_add = model.SubmodelElementCollectionOrdered(id_short="Robot_SoftProtector")
 submodel_6.submodel_element.add(smc_add)
-smc_add = model.SubmodelElementCollectionOrdered(id_short="Elbow")
+smc_add = model.SubmodelElementCollectionOrdered(id_short="Robot_Elbow")
 submodel_6.submodel_element.add(smc_add)
 
 # 6.6 add smc
-smc_add = model.SubmodelElementCollectionOrdered(id_short="Pilot")
+smc_add = model.SubmodelElementCollectionOrdered(id_short="Robot_Pilot")
 submodel_6.submodel_element.add(smc_add)
 prop1 = model.Property(id_short="PilotMode", value_type=model.datatypes.String, value="")
-prop2 = model.Property(id_short="Cancel", value_type=model.datatypes.String, value="")
-prop3 = model.Property(id_short="Enter", value_type=model.datatypes.String, value="")
-prop4 = model.Property(id_short="Save", value_type=model.datatypes.String, value= "")
-prop5 = model.Property(id_short="StatusLight", value_type=model.datatypes.String, value= "0.005 m")
+prop2 = model.Property(id_short="Pilot_Cancel", value_type=model.datatypes.String, value="")
+prop3 = model.Property(id_short="Pilot_Enter", value_type=model.datatypes.String, value="")
+prop4 = model.Property(id_short="Pilot_Save", value_type=model.datatypes.String, value= "")
+prop5 = model.Property(id_short="Pilot_StatusLight", value_type=model.datatypes.String, value= "0.005 m")
 
 prop=[prop1,prop2,prop3,prop4,prop5]
 for i in prop:
@@ -774,10 +774,10 @@ for i in prop:
 #create smc collection and add it to the submodel collection
 smc_son = model.SubmodelElementCollectionOrdered(id_short="DirectionsKeys")
 smc_add.value.add(smc_son)
-prop1 = model.Property(id_short="Up", value_type=model.datatypes.String, value="")
-prop2 = model.Property(id_short="Down", value_type=model.datatypes.String, value="")
-prop3 = model.Property(id_short="Left", value_type=model.datatypes.String, value="")
-prop4 = model.Property(id_short="Right", value_type=model.datatypes.String, value= "")
+prop1 = model.Property(id_short="Key_Up", value_type=model.datatypes.String, value="")
+prop2 = model.Property(id_short="Key_Down", value_type=model.datatypes.String, value="")
+prop3 = model.Property(id_short="Key_Left", value_type=model.datatypes.String, value="")
+prop4 = model.Property(id_short="Key_Right", value_type=model.datatypes.String, value= "")
 prop=[prop1,prop2,prop3,prop4]
 for i in prop:
         smc_add.value.add(i)
@@ -788,24 +788,24 @@ submodel_6.submodel_element.add(smc_add)
 # 6.8 add smc
 smc_add = model.SubmodelElementCollectionOrdered(id_short="Grip")
 submodel_6.submodel_element.add(smc_add)
-ent1 = model.Entity(id_short="Flange",entity_type=model.EntityType.CO_MANAGED_ENTITY)
-ent2 = model.Entity(id_short="Finger",entity_type=model.EntityType.CO_MANAGED_ENTITY)
-ent3 = model.Entity(id_short="Fingertip",entity_type=model.EntityType.CO_MANAGED_ENTITY)
-ent4 = model.Entity(id_short="Scews",entity_type=model.EntityType.CO_MANAGED_ENTITY)
-ent5 = model.Entity(id_short="CylindricalPin",entity_type=model.EntityType.CO_MANAGED_ENTITY)
-ent6 = model.Entity(id_short="Links",entity_type=model.EntityType.CO_MANAGED_ENTITY)
-ent7 = model.Entity(id_short="Joints",entity_type=model.EntityType.CO_MANAGED_ENTITY)
+ent1 = model.Entity(id_short="Grip_Flange",entity_type=model.EntityType.CO_MANAGED_ENTITY)
+ent2 = model.Entity(id_short="Grip_Finger",entity_type=model.EntityType.CO_MANAGED_ENTITY)
+ent3 = model.Entity(id_short="Grip_Fingertip",entity_type=model.EntityType.CO_MANAGED_ENTITY)
+ent4 = model.Entity(id_short="Grip_Scews",entity_type=model.EntityType.CO_MANAGED_ENTITY)
+ent5 = model.Entity(id_short="Grip_CylindricalPin",entity_type=model.EntityType.CO_MANAGED_ENTITY)
+ent6 = model.Entity(id_short="Grip_Links",entity_type=model.EntityType.CO_MANAGED_ENTITY)
+ent7 = model.Entity(id_short="Grip_Joints",entity_type=model.EntityType.CO_MANAGED_ENTITY)
 
-prop1 = model.Property(id_short="Numbers", value_type=model.datatypes.String, value="2")
-prop2 = model.Property(id_short="Specification", value_type=model.datatypes.String, value="DIN7984")
-prop3 = model.Property(id_short="Size", value_type=model.datatypes.String, value="M6X12")
+prop1 = model.Property(id_short="Grip_Numbers", value_type=model.datatypes.String, value="2")
+prop2 = model.Property(id_short="Grip_Specification", value_type=model.datatypes.String, value="DIN7984")
+prop3 = model.Property(id_short="Grip_Size", value_type=model.datatypes.String, value="M6X12")
 
 prop=[prop1,prop2,prop3]
 for i in prop:
         ent4.statement.add(i)
-prop1 = model.Property(id_short="Numbers", value_type=model.datatypes.String, value="1")
-prop2 = model.Property(id_short="Specification", value_type=model.datatypes.String, value="ISO2338B")
-prop3 = model.Property(id_short="Size", value_type=model.datatypes.String, value="6X10 h8 A2")
+prop1 = model.Property(id_short="Grip_CylindricalPinNumbers", value_type=model.datatypes.String, value="1")
+prop2 = model.Property(id_short="Grip_CylindricalPinSpecification", value_type=model.datatypes.String, value="ISO2338B")
+prop3 = model.Property(id_short="Grip_CylindricalPinSize", value_type=model.datatypes.String, value="6X10 h8 A2")
 
 prop=[prop1,prop2,prop3]
 for i in prop:
