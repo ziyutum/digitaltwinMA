@@ -1,4 +1,0 @@
-{"$dtId":"FrankaRobot", 
-"$etag":"W/\"dummy-etag\"", 
-"administration": {"$metadata":{}}, 
-"$metadata": { "$model":"dtmi:digitaltwins:aas:AssetAdministrationShell;1"}}

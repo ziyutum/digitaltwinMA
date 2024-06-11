@@ -1,1 +1,0 @@
-/usr/bin/c++  -O2 -g -DNDEBUG   CMakeFiles/test.dir/src/test.cpp.o  -o test  -Wl,-rpath,/home/masais/ziyu/robotControlProgram/build/libfranka libfranka/examples/libexamples_common.a libfranka/libfranka.so.0.9.0 

@@ -1,1 +1,0 @@
-/usr/bin/c++  -O2 -g -DNDEBUG   CMakeFiles/bottleplacing_control.dir/src/bottleplacing_control.cpp.o  -o bottleplacing_control  -Wl,-rpath,/home/masais/ziyu/robotControlProgram/build/libfranka libfranka/examples/libexamples_common.a libfranka/libfranka.so.0.9.0 

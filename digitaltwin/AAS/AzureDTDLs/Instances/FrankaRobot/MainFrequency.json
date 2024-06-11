@@ -1,6 +1,0 @@
-{"$dtId":"MainFrequency", 
-"$etag":"W/\"6030225d-b379-4134-beea-ea2af2a16c34\"", 
-"value":"47-63 Hz", 
-"valueType":"<class 'str'>", 
-"kind":{"$metadata":{}}, 
-"$metadata":{"$model":"dtmi:digitaltwins:aas:Property;1"} }
