@@ -5,7 +5,7 @@
  * https://docs.microsoft.com/de-DE/rest/api/azure-digitaltwins/
  
  */
-
+// new version 24,05,2024
 using System;
 using System.Net; // For client side connection to omniverse
 using System.Net.Sockets; // For server side socket connection with the Robot controller
@@ -17,8 +17,9 @@ using System.Text.Json; // For deserialization of the dtdl description of the tw
 using System.Timers; // To define fixed time intervalls when twin is updated or data is from twin is read
 
 // Azure, Azure Digital Twins realted imports
-// Note: The packages must be added to the project first, see
 //       https://docs.microsoft.com/de-de/azure/digital-twins/tutorial-code
+// we are using netcore version 8 on ubuntu, check the config before running to ensure the NetCore version is 8.0
+
 using Azure;
 using Azure.DigitalTwins.Core;
 using Azure.Identity;
@@ -37,7 +38,7 @@ namespace CSClient
 
         // Members for the device connection
         //static string m_deviceIP = "10.183.240.78";    // Local IP-Address of machine running RobotControlProgram (device)
-        static string m_deviceIP = "192.168.10.5";                                                 // use "Localhost" it is the same machine
+        static string m_deviceIP = "127.0.0.1";                  // use "Localhost" it is the same machine
         static int m_devicePort = 8080;               // Port for communication with device
         static TcpClient m_deviceClient;              // Tcp socket for connection establishment
         static NetworkStream m_deviceClientStream;    // Datastream of the device
@@ -54,7 +55,7 @@ namespace CSClient
         
         // Members to configure the downstream access
         static Timer m_downstreamTimer = new System.Timers.Timer(100); // Max length in ms
-        static Timer m_maxTimeDownstream = new System.Timers.Timer(60000*5);
+        static Timer m_maxTimeDownstream = new System.Timers.Timer(60000*5000);
         static List<string> m_downstreamTwins = new List<string>{"PositionJoint1", "PositionJoint2", "PositionJoint3", "PositionJoint4", "PositionJoint5", "PositionJoint6", "PositionJoint7"};
         
         // Vars for debugging
@@ -70,7 +71,8 @@ namespace CSClient
             Console.WriteLine("Beginning with authentication ...");
 
             // Instace URL found in the Azure Portal
-            string adtInstanceUrl = "https://kifabrik-dt.api.weu.digitaltwins.azure.net";
+            string adtInstanceUrl = "https://FrankaMyJoghurtDTCreation.api.weu.digitaltwins.azure.net";
+            // https://FrankaMyJoghurtDTCreation.api.weu.digitaltwins.azure.net        https://FrankaMyJoghurtDTCreation.api.weu.digitaltwins.azure.net
             // Authenticate with the Azure service
             var credential = new DefaultAzureCredential(new DefaultAzureCredentialOptions { ExcludeSharedTokenCacheCredential = true });
             DigitalTwinsClient client = new DigitalTwinsClient(new Uri(adtInstanceUrl), credential);
@@ -79,8 +81,9 @@ namespace CSClient
             
             
             initialize_device_connection(); // device means machine runing CSClient program
-            
-            
+            // This is the ETCIM-1 instance
+            //initialize_consumer_connection(); // Consumer is Isaac Sim
+    
             //----- Specify conditions for communication start -----
             while( !m_bConnectedToDevice   /*|| !m_bConsumerIsConnected */) { 
                 // Console.WriteLine("Waiting until conditions are satisfied");
@@ -153,7 +156,7 @@ namespace CSClient
             
             // Declare the list of to be updated twins before the read data functions is assigned
             // gripper closing width and gripper opening width are wrong, they should be the gripper left & right finger width
-            List<string> updateTwinIds = new List<string>{"PositionJoint1", "PositionJoint2", "PositionJoint3", "PositionJoint4", "PositionJoint5", "PositionJoint6", "PositionJoint7", "GripperClosingWidth", "GripperOpeningWidht"};
+            List<string> updateTwinIds = new List<string>{"JointPosition1", "JointPosition2", "JointPosition3", "JointPosition4", "JointPosition5", "JointPosition6", "JointPosition7", "Width", "Gripperspeed"};
 
             bool continueReading = true; // Flag that can stop the reading process
             Timer timerMaxRead = new System.Timers.Timer(50000); // Timer for whole reading process [ms]
@@ -269,7 +272,13 @@ namespace CSClient
          */
         // TODO: make task async
         static void update_twin_from_patches(List<JsonPatchDocument> patches, List<string> twinIds, int funcCount){
-            m_azureClient.UpdateComponentAsync(twinIds[3], "value", patches[3]); 
+            Console.WriteLine("Displaying Patches");
+            Console.WriteLine(patches);
+            // update the whole twinID as a whole Sting
+            for(int i=0; i<patches.Count; i++){
+                m_azureClient.UpdateComponent(twinIds[i], "value", patches[i]); 
+
+            }
             Console.WriteLine("Twin graph updated for Num: " + funcCount);
         }
     }
