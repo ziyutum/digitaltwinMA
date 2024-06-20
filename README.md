@@ -25,15 +25,18 @@
 ### Installing Omniverse in Ubuntu
 1. install cache and nucleus (document from Gitlab)
 2. unistall all the nvida
+```
 sudo apt-get remove --purge '^nvidia-.*'
 sudo apt autoremove
 sudo apt autoclean
+```
 - install a new driver
   download .run files here: https://www.nvidia.com/en-us/drivers/unix/
-3.
-    Change to the directory where you have the .run file stored.
-    Type: chmod 755 filename.run
-    Type: sudo ./filename.run
+3. Terminal installing driver
+    -Change to the directory where you have the .run file stored.
+  
+    -Type: chmod 755 filename.run
+    -Type: sudo ./filename.run
 
   eg: sudo ./NVIDIA-Linux-x86_64-550.90.07.run 
 
