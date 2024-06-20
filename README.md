@@ -33,7 +33,7 @@ sudo apt autoclean
 - install a new driver
   download .run files here: https://www.nvidia.com/en-us/drivers/unix/
 3. Terminal installing driver
-    -Change to the directory where you have the .run file stored.
+  \n Change to the directory where you have the .run file stored.
   
     -Type: chmod 755 filename.run
     -Type: sudo ./filename.run
