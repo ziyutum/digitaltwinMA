@@ -500,7 +500,7 @@ semantic_reference_operational_data = model.Reference( (model.Key( type_=model.K
                                                                       value='TBD Reference to definition of OperationalData',
                                                                       id_type=model.KeyType.IRI  ),) )
 submodel_4 = model.Submodel(identification=submodel_identifier_operational_data,
-                                                id_short="OperationalData",
+                                                id_short="FrankaOperationalData",
                                                 semantic_id=semantic_reference_operational_data)
 aas.submodel.add(model.AASReference.from_referable(submodel_4))
 
