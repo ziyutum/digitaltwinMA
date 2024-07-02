@@ -64,7 +64,7 @@ namespace uploadDTtoAzure
             Console.WriteLine("Start Deleting. Press any key to stop");
             Console.ReadKey();
         
-            upload_instances_rels(client);
+           upload_instances_rels(client);
             Console.WriteLine("Start Uploading. Press any key to stop");
             Console.ReadKey();
 
@@ -252,7 +252,7 @@ namespace uploadDTtoAzure
 
             await foreach (BasicDigitalTwin twin in queryResult)
             {
-                //Console.WriteLine(twin.Id);
+                Console.WriteLine(twin.Id);
                 Pageable<IncomingRelationship> allIncoming = client.GetIncomingRelationships(twin.Id);
                 foreach (IncomingRelationship incomingRel in allIncoming)
                 {
@@ -268,10 +268,10 @@ namespace uploadDTtoAzure
 
             await foreach (BasicDigitalTwin twin in queryResult)
             {
-                //Console.WriteLine(twin.Id);
+                Console.WriteLine(twin.Id);
                 await client.DeleteDigitalTwinAsync(twin.Id);
                 Console.WriteLine(twin.Id);
-                //Console.WriteLine(JsonSerializer.Serialize(twin));
+                Console.WriteLine(JsonSerializer.Serialize(twin));
             }
             Console.WriteLine("Successfully deleted all instances");
 

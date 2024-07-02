@@ -1,30 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/home/fandibi/Desktop/Jingyun/Github/TASE/aas4panda-josua/uploadDTtoAzure/uploadDTtoAzure.csproj": {}
+    "C:\\Users\\li\\Downloads\\digitaltwin-175f3e0c3b6c51b25a704b482d88e96c8643790c\\digitaltwin\\UploadAzureGraph\\uploadDTtoAzure.csproj": {}
   },
   "projects": {
-    "/home/fandibi/Desktop/Jingyun/Github/TASE/aas4panda-josua/uploadDTtoAzure/uploadDTtoAzure.csproj": {
+    "C:\\Users\\li\\Downloads\\digitaltwin-175f3e0c3b6c51b25a704b482d88e96c8643790c\\digitaltwin\\UploadAzureGraph\\uploadDTtoAzure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/fandibi/Desktop/Jingyun/Github/TASE/aas4panda-josua/uploadDTtoAzure/uploadDTtoAzure.csproj",
+        "projectUniqueName": "C:\\Users\\li\\Downloads\\digitaltwin-175f3e0c3b6c51b25a704b482d88e96c8643790c\\digitaltwin\\UploadAzureGraph\\uploadDTtoAzure.csproj",
         "projectName": "uploadDTtoAzure",
-        "projectPath": "/home/fandibi/Desktop/Jingyun/Github/TASE/aas4panda-josua/uploadDTtoAzure/uploadDTtoAzure.csproj",
-        "packagesPath": "/home/fandibi/.nuget/packages/",
-        "outputPath": "/home/fandibi/Desktop/Jingyun/Github/TASE/aas4panda-josua/uploadDTtoAzure/obj/",
+        "projectPath": "C:\\Users\\li\\Downloads\\digitaltwin-175f3e0c3b6c51b25a704b482d88e96c8643790c\\digitaltwin\\UploadAzureGraph\\uploadDTtoAzure.csproj",
+        "packagesPath": "C:\\Users\\li\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\li\\Downloads\\digitaltwin-175f3e0c3b6c51b25a704b482d88e96c8643790c\\digitaltwin\\UploadAzureGraph\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/fandibi/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\li\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net6.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -32,16 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "dependencies": {
             "Azure.DigitalTwins.Core": {
               "target": "Package",
@@ -68,7 +63,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/fandibi/.dotnet/sdk/8.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.423\\RuntimeIdentifierGraph.json"
         }
       }
     }
