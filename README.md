@@ -103,27 +103,50 @@ sudo lshw -C network
 2. download the iwlwifi files
    
 https://launchpad.net/ubuntu/+source/backport-iwlwifi-dkms
+
 http://archive.ubuntu.com/ubuntu/pool/universe/b/backport-iwlwifi-dkms/
 
 4. install the drive:
+```
 sudo apt install backport-iwlwifi-dkms
 make
 sudo make install
+```
 
-
-Make sure dkms package is installed by running command: sudo apt-get install dkms.
+Make sure dkms package is installed by running command: 
+```
+sudo apt-get install dkms.
+```
 Go to this page ubuntu wiki.
+
 You will find a table under the "Packages" heading. ...
+
 Click the arrow (to the left) to expand the row of the selected package.
+
 Under the new section "Package files", click the file ending with ". ...
+
 Reboot.
 
 
-
+### method
 1. update the linux
-run sudo apt-get upgrade linux-generic-hwe-20.04 followed by sudo reboot. To check that version 5.15 was installed, run apt list linux-generic-hwe* and you should see linux-generic-hwe-20.04/focal-updates,focal-security,now 5.15.0.46.49~20.04.16 amd64 [installed].
-2. download all the dependencies and files
+   
+run 
+```
+sudo apt-get upgrade linux-generic-hwe-20.04
+```
+ followed by 
+ ```sudo reboot```.
+ 
+ To check that version 5.15 was installed, run apt list linux-generic-hwe* and you should see linux-generic-hwe-20.04/focal-updates,focal-security,now 5.15.0.46.49~20.04.16 amd64 [installed].
+
+3. download all the dependencies and files
+4. 
 https://packages.ubuntu.com/focal/kernel/linux-generic-hwe-20.04
+
 Before installing the package, you will need to install these dependencies first by clicking on their links. In my case, I installed the dependencies that had the label [amd64] next to them, since my laptop runs a 64-bit architecture. Unfortunately, these dependencies have their own dependencies, so you will have to click on each one and then download the corresponding .deb file. In total there were 7 .deb files that I had to download, so this does not take too much time. To download each package, click on the amd64 link under the Download <package name> title. Then, click on the link security.ubuntu.com/ubuntu. Once all packages are downloaded, put them all into a folder
-3. run the file
-cd into this folder, and then run sudo dpkg -i *.deb. You will get an error that the linux-generic-hwe-20.04 package could not be installed, but that is OK. Just run sudo reboot, and once logged in again, check that you have version 5.15 of the linux kernel by running uname -r. You should see 5.15.0-46-generic. 
+
+
+6. run the file
+7. 
+cd into this folder, and then run ```sudo dpkg -i *.deb```. You will get an error that the linux-generic-hwe-20.04 package could not be installed, but that is OK. Just run sudo reboot, and once logged in again, check that you have version 5.15 of the linux kernel by running uname -r. You should see 5.15.0-46-generic. 
