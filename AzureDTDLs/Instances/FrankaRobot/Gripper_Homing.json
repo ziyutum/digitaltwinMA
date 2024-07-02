@@ -1,0 +1,6 @@
+{"$dtId":"Gripper_Homing", 
+"$etag":"W/\"6030225d-b379-4134-beea-ea2af2a16c34\"", 
+"value":"True", 
+"valueType":"<class 'bool'>", 
+"kind":{"$metadata":{}}, 
+"$metadata":{"$model":"dtmi:digitaltwins:aas:Property;1"} }
