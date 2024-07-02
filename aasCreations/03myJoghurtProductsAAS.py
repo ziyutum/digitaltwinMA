@@ -189,9 +189,24 @@ prop = model.Property(id_short="Flavor", value_type=model.datatypes.String, valu
 smc_add.value.add(prop)
 submodel_8.submodel_element.add(smc_add)
 
+#------------9.submodel: ContainerOperationData---------------------------------------------------------------------------------------
+submodel_identifier_tec = model.Identifier('https://tum.ais.de/Submodels/ContainerOperationData', model.IdentifierType.IRI)
+submodel_9 = model.Submodel(identification=submodel_identifier_tec, id_short="ContainerOperationData", kind=model.ModelingKind.INSTANCE)
+aas.submodel.add(model.AASReference.from_referable(submodel_9))
+smc_add = model.SubmodelElementCollectionOrdered(id_short="BottleContainerLocation", kind=model.ModelingKind.INSTANCE)
+prop = model.Property(id_short="Bottle_LocationX", value_type=model.datatypes.String, value="")
+prop2 = model.Property(id_short="Bottle_LocationY", value_type=model.datatypes.String, value="")
+smc_add.value.add(prop)
+smc_add.value.add(prop2)
+submodel_9.submodel_element.add(smc_add)
+smc_add = model.SubmodelElementCollectionOrdered(id_short="BottleContainerPositon", kind=model.ModelingKind.INSTANCE)
+prop = model.Property(id_short="Bottle_Position", value_type=model.datatypes.String, value="")
 
+smc_add.value.add(prop)
+
+submodel_9.submodel_element.add(smc_add)
 #################################################################################################################################################
-object_store = model.DictObjectStore([aas, asset, submodel_nameplate, submodel_2, submodel_3,submodel_4,submodel_5,submodel_6,submodel_7,submodel_8])
+object_store = model.DictObjectStore([aas, asset, submodel_nameplate, submodel_2, submodel_3,submodel_4,submodel_5,submodel_6,submodel_7,submodel_8,submodel_9])
 file_store = aasx.DictSupplementaryFileContainer()
 
 with aasx.AASXWriter("03_myJoghurt_Products_AAS.aasx") as w:
