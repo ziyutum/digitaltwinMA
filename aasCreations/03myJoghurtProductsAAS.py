@@ -63,14 +63,14 @@ aas.submodel.add(model.AASReference.from_referable(submodel_2))
 
 # 1. yoghurt container smc
 smc_add = model.SubmodelElementCollectionOrdered(id_short="MyJoghurtProductContainer", kind=model.ModelingKind.TEMPLATE)
-prop1 = model.Property(id_short="Material", value_type=model.datatypes.String, value="glass")
-prop2 = model.Property(id_short="Mouth", value_type=model.datatypes.String, value="wide")
-prop3 = model.Property(id_short="Capability", value_type=model.datatypes.String, value="")
-prop4 = model.Property(id_short="Height", value_type=model.datatypes.String, value="")
-prop5 = model.Property(id_short="MouthSize", value_type=model.datatypes.String, value="")
-prop6 = model.Property(id_short="OuterDiameter", value_type=model.datatypes.String, value="")
-prop7 = model.Property(id_short="NeckOuterDiameter", value_type=model.datatypes.String, value="")
-prop8 = model.Property(id_short="Weight", value_type=model.datatypes.String, value="")
+prop1 = model.Property(id_short="ProductContainer_Material", value_type=model.datatypes.String, value="glass")
+prop2 = model.Property(id_short="ProductContainer_Mouth", value_type=model.datatypes.String, value="wide")
+prop3 = model.Property(id_short="ProductContainer_Capability", value_type=model.datatypes.String, value="")
+prop4 = model.Property(id_short="ProductContainer_Height", value_type=model.datatypes.String, value="")
+prop5 = model.Property(id_short="ProductContainer_MouthSize", value_type=model.datatypes.String, value="")
+prop6 = model.Property(id_short="ProductContainer_OuterDiameter", value_type=model.datatypes.String, value="")
+prop7 = model.Property(id_short="ProductContainer_NeckOuterDiameter", value_type=model.datatypes.String, value="")
+prop8 = model.Property(id_short="ProductContainer_Weight", value_type=model.datatypes.String, value="")
 
 
 prop=[prop1,prop2,prop3,prop4,prop5,prop6,prop7,prop8]
@@ -93,15 +93,15 @@ submodel_identifier_tec = model.Identifier('https://tum.ais.de/Submodels/Status'
 submodel_4 = model.Submodel(identification=submodel_identifier_tec, id_short="Status", kind=model.ModelingKind.INSTANCE)
 aas.submodel.add(model.AASReference.from_referable(submodel_4))
 
-prop1 = model.Property(id_short="Barcode", value_type=model.datatypes.String, value="")
-prop2 = model.Property(id_short="HasClosure", value_type=model.datatypes.String, value="no")
-prop3 = model.Property(id_short="IsEmpty", value_type=model.datatypes.String, value="")
-prop4 = model.Property(id_short="InCellID", value_type=model.datatypes.String, value="")
-prop5 = model.Property(id_short="FillingMaterial", value_type=model.datatypes.String, value="")
-prop6 = model.Property(id_short="FillingAmount", value_type=model.datatypes.String, value="")
-prop7 = model.Property(id_short="StorageTemperature", value_type=model.datatypes.String, value="")
-prop8 = model.Property(id_short="ProductionDate", value_type=model.datatypes.String, value="")
-prop9 = model.Property(id_short="ExpirationDate", value_type=model.datatypes.String, value="")
+prop1 = model.Property(id_short="Product_Barcode", value_type=model.datatypes.String, value="")
+prop2 = model.Property(id_short="Product_HasClosure", value_type=model.datatypes.String, value="no")
+prop3 = model.Property(id_short="Product_IsEmpty", value_type=model.datatypes.String, value="")
+prop4 = model.Property(id_short="Product_InCellID", value_type=model.datatypes.String, value="")
+prop5 = model.Property(id_short="Product_FillingMaterial", value_type=model.datatypes.String, value="")
+prop6 = model.Property(id_short="Product_FillingAmount", value_type=model.datatypes.String, value="")
+prop7 = model.Property(id_short="Product_StorageTemperature", value_type=model.datatypes.String, value="")
+prop8 = model.Property(id_short="Product_ProductionDate", value_type=model.datatypes.String, value="")
+prop9 = model.Property(id_short="Product_ExpirationDate", value_type=model.datatypes.String, value="")
 
 
 prop=[prop1,prop2,prop3,prop4,prop5,prop6,prop7,prop8,prop9]
@@ -125,9 +125,9 @@ submodel_identifier_tec = model.Identifier('https://tum.ais.de/Submodels/Quality
 submodel_5 = model.Submodel(identification=submodel_identifier_tec, id_short="QualityControl", kind=model.ModelingKind.INSTANCE)
 aas.submodel.add(model.AASReference.from_referable(submodel_5))
 
-prop1 = model.Property(id_short="QualityInspectionResult", value_type=model.datatypes.String, value="")
-prop2 = model.Property(id_short="InspectionDate", value_type=model.datatypes.String, value="no")
-prop3 = model.Property(id_short="Inspector", value_type=model.datatypes.String, value="")
+prop1 = model.Property(id_short="Product_QualityInspectionResult", value_type=model.datatypes.String, value="")
+prop2 = model.Property(id_short="Product_InspectionDate", value_type=model.datatypes.String, value="no")
+prop3 = model.Property(id_short="Product_Inspector", value_type=model.datatypes.String, value="")
 
 prop=[prop1,prop2,prop3]
 for i in prop:
@@ -138,10 +138,10 @@ submodel_identifier_tec = model.Identifier('https://tum.ais.de/Submodels/Maketin
 submodel_6 = model.Submodel(identification=submodel_identifier_tec, id_short="MaketingInformation", kind=model.ModelingKind.INSTANCE)
 aas.submodel.add(model.AASReference.from_referable(submodel_6))
 
-prop1 = model.Property(id_short="SaleDate", value_type=model.datatypes.String, value="")
-prop2 = model.Property(id_short="SaleLocation", value_type=model.datatypes.String, value="no")
-prop3 = model.Property(id_short="SalesChannel", value_type=model.datatypes.String, value="")
-prop4 = model.Property(id_short="SalePrice", value_type=model.datatypes.String, value="")
+prop1 = model.Property(id_short="Product_SaleDate", value_type=model.datatypes.String, value="")
+prop2 = model.Property(id_short="Product_SaleLocation", value_type=model.datatypes.String, value="no")
+prop3 = model.Property(id_short="Product_SalesChannel", value_type=model.datatypes.String, value="")
+prop4 = model.Property(id_short="Product_SalePrice", value_type=model.datatypes.String, value="")
 
 prop=[prop1,prop2,prop3,prop4]
 for i in prop:
@@ -152,19 +152,19 @@ submodel_identifier_tec = model.Identifier('https://tum.ais.de/Submodels/Monitor
 submodel_7 = model.Submodel(identification=submodel_identifier_tec, id_short="MonitoringInformation", kind=model.ModelingKind.INSTANCE)
 aas.submodel.add(model.AASReference.from_referable(submodel_7))
 
-prop1 = model.Property(id_short="MonitoringDate", value_type=model.datatypes.String, value="")
-prop2 = model.Property(id_short="MonitoringLocation", value_type=model.datatypes.String, value="no")
+prop1 = model.Property(id_short="Product_MonitoringDate", value_type=model.datatypes.String, value="")
+prop2 = model.Property(id_short="Product_MonitoringLocation", value_type=model.datatypes.String, value="no")
 
 prop=[prop1,prop2]
 for i in prop:
         submodel_7.submodel_element.add(i)
 # 1.  smc ingredient
 smc_add = model.SubmodelElementCollectionOrdered(id_short="EnvironmentalMonitoringData", kind=model.ModelingKind.TEMPLATE)
-prop1 = model.Property(id_short="Temperature", value_type=model.datatypes.String, value="")
-prop2 = model.Property(id_short="Humidity", value_type=model.datatypes.String, value="")
-prop3 = model.Property(id_short="Sanitation", value_type=model.datatypes.String, value="")
-prop4 = model.Property(id_short="WaterQuality", value_type=model.datatypes.String, value="")
-prop5 = model.Property(id_short="AirQuality", value_type=model.datatypes.String, value="")
+prop1 = model.Property(id_short="Environment_Temperature", value_type=model.datatypes.String, value="")
+prop2 = model.Property(id_short="Environment_Humidity", value_type=model.datatypes.String, value="")
+prop3 = model.Property(id_short="Environment_Sanitation", value_type=model.datatypes.String, value="")
+prop4 = model.Property(id_short="Environment_WaterQuality", value_type=model.datatypes.String, value="")
+prop5 = model.Property(id_short="Environment_AirQuality", value_type=model.datatypes.String, value="")
 
 prop=[prop1,prop2,prop3,prop4,prop5]
 for i in prop:
@@ -178,8 +178,8 @@ aas.submodel.add(model.AASReference.from_referable(submodel_8))
 
 # 1.  smc bottle
 smc_add = model.SubmodelElementCollectionOrdered(id_short="BottleContainer", kind=model.ModelingKind.INSTANCE)
-prop = model.Property(id_short="Number", value_type=model.datatypes.String, value="")
-prop2 = model.Property(id_short="Capability", value_type=model.datatypes.String, value="")
+prop = model.Property(id_short="BottleContainer_Number", value_type=model.datatypes.String, value="")
+prop2 = model.Property(id_short="BottleContainer_Capability", value_type=model.datatypes.String, value="")
 smc_add.value.add(prop)
 smc_add.value.add(prop2)
 submodel_8.submodel_element.add(smc_add)

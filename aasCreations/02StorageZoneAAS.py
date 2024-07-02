@@ -85,9 +85,9 @@ aas.submodel.add(model.AASReference.from_referable(submodel_2))
 
 # 1. base platform smc
 smc_add = model.SubmodelElementCollectionOrdered(id_short="BasePlatform", kind=model.ModelingKind.TEMPLATE)
-prop1 = model.Property(id_short="Length", value_type=model.datatypes.String, value="2.62 m")
-prop2 = model.Property(id_short="Width", value_type=model.datatypes.String, value="0.16 m")
-prop3 = model.Property(id_short="Height", value_type=model.datatypes.String, value="0.06 m")
+prop1 = model.Property(id_short="BaseLength", value_type=model.datatypes.String, value="2.62 m")
+prop2 = model.Property(id_short="BaseWidth", value_type=model.datatypes.String, value="0.16 m")
+prop3 = model.Property(id_short="BaseHeight", value_type=model.datatypes.String, value="0.06 m")
 prop=[prop1,prop2,prop3]
 
 for i in prop:
@@ -97,11 +97,11 @@ submodel_2.submodel_element.add(smc_add)
 # 2. cell platform
 smc_add = model.SubmodelElementCollectionOrdered(id_short="CellPlatform", kind=model.ModelingKind.TEMPLATE)
 prop1 = model.Property(id_short="NumberOfCells", value_type=model.datatypes.String, value="126")
-prop2 = model.Property(id_short="Length", value_type=model.datatypes.String, value="2.60 m")
-prop3 = model.Property(id_short="Width", value_type=model.datatypes.String, value="0.15 m")
-prop4 = model.Property(id_short="Height", value_type=model.datatypes.String, value="0.02 m")
-prop5 = model.Property(id_short="CellsDiameter", value_type=model.datatypes.String, value="45.00 mm")
-prop6 = model.Property(id_short="CellsDepth", value_type=model.datatypes.String, value="10.00 mm")
+prop2 = model.Property(id_short="CellPlatform_Length", value_type=model.datatypes.String, value="2.60 m")
+prop3 = model.Property(id_short="CellPlatform_Width", value_type=model.datatypes.String, value="0.15 m")
+prop4 = model.Property(id_short="CellPlatform_Height", value_type=model.datatypes.String, value="0.02 m")
+prop5 = model.Property(id_short="Storage_CellsDiameter", value_type=model.datatypes.String, value="45.00 mm")
+prop6 = model.Property(id_short="Storage_CellsDepth", value_type=model.datatypes.String, value="10.00 mm")
 
 prop=[prop1,prop2,prop3,prop4,prop5,prop6]
 
@@ -112,8 +112,8 @@ submodel_2.submodel_element.add(smc_add)
 #create smc collection and add it to the submodel
 smc_son = model.SubmodelElementCollectionOrdered(id_short="Arrangement")
 
-prop1 = model.Property(id_short="NumberOfRows", value_type=model.datatypes.String, value="3")
-prop2 = model.Property(id_short="NumberOfCellsEachRow", value_type=model.datatypes.String, value="42")
+prop1 = model.Property(id_short="StorageCell_NumberOfRows", value_type=model.datatypes.String, value="3")
+prop2 = model.Property(id_short="StorageCell_NumberOfCellsEachRow", value_type=model.datatypes.String, value="42")
 
 prop=[prop1,prop2]
 for i in prop:
@@ -146,10 +146,10 @@ for i in prop:
 smc_son = model.SubmodelElementCollectionOrdered(id_short=("CellStatus"))
 submodel_4.submodel_element.add(smc_son)
 property_1 = model.Property(id_short="HasJoghurtProduct", value_type=model.datatypes.String, value="")
-property_2 = model.Property(id_short="InRow", value_type=model.datatypes.String, value="")
-property_3 = model.Property(id_short="InColumn", value_type=model.datatypes.String, value="")
-property_4 = model.Property(id_short="LocationX", value_type=model.datatypes.String, value="")
-property_5 = model.Property(id_short="LocationY", value_type=model.datatypes.String, value="")
+property_2 = model.Property(id_short="CellInRow", value_type=model.datatypes.String, value="")
+property_3 = model.Property(id_short="CellInColumn", value_type=model.datatypes.String, value="")
+property_4 = model.Property(id_short="CellLocationX", value_type=model.datatypes.String, value="")
+property_5 = model.Property(id_short="CellLocationY", value_type=model.datatypes.String, value="")
 smc_son.value.add(property_1)
 smc_son.value.add(property_2)
 smc_son.value.add(property_3)
@@ -177,20 +177,20 @@ submodel_5 = model.Submodel(identification=submodel_identifier_tec, id_short="Co
 aas.submodel.add(model.AASReference.from_referable(submodel_5))
 
 # 1.  smc screw
-smc_add = model.SubmodelElementCollectionOrdered(id_short="Screw", kind=model.ModelingKind.INSTANCE)
-prop = model.Property(id_short="Number", value_type=model.datatypes.String, value="")
-prop2 = model.Property(id_short="Size", value_type=model.datatypes.String, value="")
+smc_add = model.SubmodelElementCollectionOrdered(id_short="StorageZone_Screw", kind=model.ModelingKind.INSTANCE)
+prop = model.Property(id_short="StorageZone_Screw_Number", value_type=model.datatypes.String, value="")
+prop2 = model.Property(id_short="StorageZone_Screw_Size", value_type=model.datatypes.String, value="")
 smc_add.value.add(prop)
 smc_add.value.add(prop2)
 submodel_5.submodel_element.add(smc_add)
 #2. base smc
-smc_add = model.SubmodelElementCollectionOrdered(id_short="Base")
-prop = model.Property(id_short="Material", value_type=model.datatypes.String, value="")
+smc_add = model.SubmodelElementCollectionOrdered(id_short="StorageZone_Base")
+prop = model.Property(id_short="StorageZone_Base_Material", value_type=model.datatypes.String, value="")
 smc_add.value.add(prop)
 submodel_5.submodel_element.add(smc_add)
 #3. cellplatform smc
-smc_add = model.SubmodelElementCollectionOrdered(id_short="CellPlatform")
-prop = model.Property(id_short="Material", value_type=model.datatypes.String, value="")
+smc_add = model.SubmodelElementCollectionOrdered(id_short="StorageZone_CellPlatform")
+prop = model.Property(id_short="StorageZone_CellPlatform_Material", value_type=model.datatypes.String, value="")
 smc_add.value.add(prop)
 submodel_5.submodel_element.add(smc_add)
 

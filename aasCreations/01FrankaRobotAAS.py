@@ -283,7 +283,7 @@ smc_add.value.add(smc_ft)
 #------------3.submodel: capabilities--------------------------------------------
 
 submodel_identifier = model.Identifier('https://tum.ais.de/Submodels/Capabilities', model.IdentifierType.IRI)
-submodel_3 = model.Submodel(identification=submodel_identifier, id_short="Capabilities", kind=model.ModelingKind.TEMPLATE)
+submodel_3 = model.Submodel(identification=submodel_identifier, id_short="RobotCapabilities", kind=model.ModelingKind.TEMPLATE)
 aas.submodel.add(model.AASReference.from_referable(submodel_3))
 
 # 1. smc collision 
