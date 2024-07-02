@@ -39,7 +39,13 @@ sudo apt autoclean
 
     -Type: sudo ./filename.run  
 
-  eg: sudo ./NVIDIA-Linux-x86_64-550.90.07.run 
+  eg: sudo ./NVIDIA-Linux-x86_64-550.90.07.run
+
+  4. Terminal
+     -cd ~/.local/share/ov/pkg/isaac-sim-4.0.0
+     -xdg-open extension_examples
+
+   5.  -open user example
 
 ### WIFI Configuration
 1. check all the wlan infos
