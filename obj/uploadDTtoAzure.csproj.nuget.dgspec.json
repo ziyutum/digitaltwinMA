@@ -1,0 +1,71 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\li\\Downloads\\digitaltwin-175f3e0c3b6c51b25a704b482d88e96c8643790c\\digitaltwin\\uploadDTtoAzure.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\li\\Downloads\\digitaltwin-175f3e0c3b6c51b25a704b482d88e96c8643790c\\digitaltwin\\uploadDTtoAzure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\li\\Downloads\\digitaltwin-175f3e0c3b6c51b25a704b482d88e96c8643790c\\digitaltwin\\uploadDTtoAzure.csproj",
+        "projectName": "uploadDTtoAzure",
+        "projectPath": "C:\\Users\\li\\Downloads\\digitaltwin-175f3e0c3b6c51b25a704b482d88e96c8643790c\\digitaltwin\\uploadDTtoAzure.csproj",
+        "packagesPath": "C:\\Users\\li\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\li\\Downloads\\digitaltwin-175f3e0c3b6c51b25a704b482d88e96c8643790c\\digitaltwin\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\li\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Azure.DigitalTwins.Core": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
+            "Azure.Identity": {
+              "target": "Package",
+              "version": "[1.10.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.423\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

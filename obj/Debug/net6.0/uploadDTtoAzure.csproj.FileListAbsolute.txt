@@ -1,0 +1,5 @@
+C:\Users\li\Downloads\digitaltwin-175f3e0c3b6c51b25a704b482d88e96c8643790c\digitaltwin\obj\Debug\net6.0\uploadDTtoAzure.csproj.AssemblyReference.cache
+C:\Users\li\Downloads\digitaltwin-175f3e0c3b6c51b25a704b482d88e96c8643790c\digitaltwin\obj\Debug\net6.0\uploadDTtoAzure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\li\Downloads\digitaltwin-175f3e0c3b6c51b25a704b482d88e96c8643790c\digitaltwin\obj\Debug\net6.0\uploadDTtoAzure.AssemblyInfoInputs.cache
+C:\Users\li\Downloads\digitaltwin-175f3e0c3b6c51b25a704b482d88e96c8643790c\digitaltwin\obj\Debug\net6.0\uploadDTtoAzure.AssemblyInfo.cs
+C:\Users\li\Downloads\digitaltwin-175f3e0c3b6c51b25a704b482d88e96c8643790c\digitaltwin\obj\Debug\net6.0\uploadDTtoAzure.csproj.CoreCompileInputs.cache
