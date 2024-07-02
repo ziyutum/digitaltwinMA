@@ -79,9 +79,25 @@ prop = model.Property(id_short="SwitchMotorModel", value_type=model.datatypes.St
 smc_add.value.add(prop)
 submodel_6.submodel_element.add(smc_add)
 
+#------------7.submodel: SwitchOperationData---------------------------------------------------------------------------------------
+submodel_identifier_tec = model.Identifier('https://tum.ais.de/Submodels/SwitchOperationData', model.IdentifierType.IRI)
+submodel_7 = model.Submodel(identification=submodel_identifier_tec, id_short="SwitchOperationData", kind=model.ModelingKind.INSTANCE)
+aas.submodel.add(model.AASReference.from_referable(submodel_7))
+smc_add = model.SubmodelElementCollectionOrdered(id_short="Switch1", kind=model.ModelingKind.TEMPLATE)
+prop = model.Property(id_short="Switch1_Angle", value_type=model.datatypes.String, value="")
+smc_add.value.add(prop)
+submodel_7.submodel_element.add(smc_add)
 
+smc_add = model.SubmodelElementCollectionOrdered(id_short="Switch2", kind=model.ModelingKind.TEMPLATE)
+prop = model.Property(id_short="Switch2_Angle", value_type=model.datatypes.String, value="")
+smc_add.value.add(prop)
+submodel_7.submodel_element.add(smc_add)
+smc_add = model.SubmodelElementCollectionOrdered(id_short="Switch3", kind=model.ModelingKind.TEMPLATE)
+prop = model.Property(id_short="Switch3_Angle", value_type=model.datatypes.String, value="")
+smc_add.value.add(prop)
+submodel_7.submodel_element.add(smc_add)
 #######################################################################################################################
-object_store = model.DictObjectStore([aas, asset, submodel_nameplate, submodel_2,submodel_3,submodel_4,submodel_5,submodel_6])
+object_store = model.DictObjectStore([aas, asset, submodel_nameplate, submodel_2,submodel_3,submodel_4,submodel_5,submodel_6,submodel_7])
 file_store = aasx.DictSupplementaryFileContainer()
 with aasx.AASXWriter("06_Bottle_Switch_AAS.aasx") as w:
 
