@@ -42,11 +42,11 @@ sudo apt autoclean
   eg: sudo ./NVIDIA-Linux-x86_64-550.90.07.run
 
   4. Terminal
+```
+     cd ~/.local/share/ov/pkg/isaac-sim-4.0.0
      
-     -cd ~/.local/share/ov/pkg/isaac-sim-4.0.0
-     
-     -xdg-open extension_examples
-
+     xdg-open extension_examples
+```
    6.  -open user example
 
 ### WIFI Configuration
