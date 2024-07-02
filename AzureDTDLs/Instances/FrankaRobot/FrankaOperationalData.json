@@ -1,4 +1,4 @@
-{"$dtId":"OperationalData", 
+{"$dtId":"FrankaOperationalData", 
 "$etag":"W/\"dummy-etag\"", 
 "kind": {"$metadata":{}},
 "$metadata": {"$model":"dtmi:digitaltwins:aas:Submodel;1"}}
