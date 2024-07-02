@@ -49,18 +49,23 @@ sudo apt autoclean
 ```
    6.  -open user example
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### WIFI Configuration
-1. check all the wlan infos
+#1. check all the wlan infos
+```
 uname -r
+```
 5.15.0-105-generic
-
+```
  lspci -nnk | grep 0280 -A3
+```
 00:14.3 Network controller [0280]: Intel Corporation Device [8086:7af0] (rev 11)
 	DeviceName: Onboard - Ethernet
 	Subsystem: Intel Corporation Device [8086:0094]
 	Kernel driver in use: iwlwifi
-
+```
 sudo lshw -C network
+```
  *-network                 
        description: Wireless interface
        product: Intel Corporation
@@ -75,6 +80,8 @@ sudo lshw -C network
        capabilities: pm msi pciexpress msix bus_master cap_list ethernet physical wireless
        configuration: broadcast=yes driver=iwlwifi driverversion=5.15.0-105-generic firmware=64.97bbee0a.0 so-a0-gf-a0-64.uc latency=0 link=no multicast=yes wireless=IEEE 802.11
        resources: iomemory:480-47f irq:18 memory:4802124000-4802127fff
+
+       
   *-network
        description: Ethernet interface
        product: Intel Corporation
@@ -91,6 +98,7 @@ sudo lshw -C network
        capabilities: pm msi msix pciexpress bus_master cap_list ethernet physical tp 10bt 10bt-fd 100bt 100bt-fd 1000bt-fd autonegotiation
        configuration: autonegotiation=on broadcast=yes driver=igc driverversion=5.15.0-105-generic duplex=full firmware=1073:8754 ip=192.168.80.100 latency=0 link=yes multicast=yes port=twisted pair speed=1Gbit/s
        resources: irq:16 memory:51100000-511fffff memory:51200000-51203fff
+
 
 2. download the iwlwifi files
    
