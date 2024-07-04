@@ -85,11 +85,11 @@ submodel_identifier_tec = model.Identifier('https://tum.ais.de/Submodels/Capabil
 submodel_4 = model.Submodel(identification=submodel_identifier_tec, id_short="AxisGuideCapabilities", kind=model.ModelingKind.TEMPLATE)
 aas.submodel.add(model.AASReference.from_referable(submodel_4))
 
-smc_add = model.SubmodelElementCollectionOrdered(id_short="Guide", kind=model.ModelingKind.INSTANCE)
+smc_add = model.SubmodelElementCollectionOrdered(id_short="AxisGuide", kind=model.ModelingKind.INSTANCE)
 prop = model.Property(id_short="GuideType", value_type=model.datatypes.String, value="Recirculating ball bearing guide")
 smc_add.value.add(prop)
 submodel_4.submodel_element.add(smc_add)
-smc_add = model.SubmodelElementCollectionOrdered(id_short="Motion", kind=model.ModelingKind.TEMPLATE)
+smc_add = model.SubmodelElementCollectionOrdered(id_short="AxisGuide_Motion", kind=model.ModelingKind.TEMPLATE)
 prop = model.Property(id_short="MotionDirection", value_type=model.datatypes.String, value="linear")
 prop2 = model.Property(id_short="MotionMaxSpeed", value_type=model.datatypes.String, value="3 m/s")
 prop3 = model.Property(id_short="MotionMaxAcceleration", value_type=model.datatypes.String, value="50 m/s2")

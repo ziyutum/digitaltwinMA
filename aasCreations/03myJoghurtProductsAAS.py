@@ -184,7 +184,7 @@ smc_add.value.add(prop)
 smc_add.value.add(prop2)
 submodel_8.submodel_element.add(smc_add)
 #2.  smc  yogurt
-smc_add = model.SubmodelElementCollectionOrdered(id_short="myJoghurtProduct")
+smc_add = model.SubmodelElementCollectionOrdered(id_short="YogurtProduct")
 prop = model.Property(id_short="Flavor", value_type=model.datatypes.String, value="")
 smc_add.value.add(prop)
 submodel_8.submodel_element.add(smc_add)
