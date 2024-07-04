@@ -1,0 +1,4 @@
+{"$dtId":"Plant_Alarmsystem", 
+"$etag":"W/\"dummy-etag\"", 
+"kind": {"$metadata":{}},
+"$metadata": {"$model":"dtmi:digitaltwins:aas:Submodel;1"}}

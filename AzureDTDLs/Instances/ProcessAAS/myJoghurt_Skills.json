@@ -1,0 +1,4 @@
+{"$dtId":"myJoghurt_Skills", 
+"$etag":"W/\"dummy-etag\"", 
+"kind": {"$metadata":{}},
+"$metadata": {"$model":"dtmi:digitaltwins:aas:Submodel;1"}}
