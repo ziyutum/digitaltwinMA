@@ -469,6 +469,8 @@ if __name__=="__main__":
     package_name4 = "aasCreations/04_Linear_Guide_Axis_AAS.aasx"
     package_name5 = "aasCreations/05_Transport_Band_Conveyor_AAS.aasx"
     package_name6 = "aasCreations/06_Bottle_Switch_AAS.aasx"
+    package_name0 = "aasCreations/00_MyJoghurt_ProcessAAS.aasx"
+
     #package_name = "aasCreations/02_Storage_Zone_AAS.aasx"
 
     #06_Bottle_Switch_AAS
@@ -504,3 +506,4 @@ create_json(package_name3,"myJoghurtProduct")
 create_json(package_name4,"GuideAxis")
 create_json(package_name5,"TransportConveyer")
 create_json(package_name6,"Bottleswitch")
+create_json(package_name0,"ProcessAAS")
