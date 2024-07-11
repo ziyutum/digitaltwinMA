@@ -51,6 +51,8 @@ sudo apt autoclean
   ```    
 /home/masais/.local/share/ov/pkg/isaac-sim-4.0.0/extension_examples/user_examples
 ```
+
+lib: https://docs.omniverse.nvidia.com/py/isaacsim/source/extensions/omni.isaac.core/docs/index.html#robots
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### WIFI Configuration
 #1. check all the wlan infos
