@@ -47,6 +47,11 @@ sudo apt autoclean
      
      xdg-open extension_examples
 ```
+```
+     cd ~/.local/share/ov/pkg/isaac-sim-2023.1.1
+     
+     xdg-open extension_examples
+```
    6.  -open user example
   ```    
 /home/masais/.local/share/ov/pkg/isaac-sim-4.0.0/extension_examples/user_examples
