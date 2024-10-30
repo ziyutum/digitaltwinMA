@@ -343,6 +343,7 @@ class PandaAIS(BaseSample):
         # self._myjoghurt= self._world.scene.get_object("myjoghurt")
         # initial_joint_positions = [0.0, -1.0, 0.0, -2.0, 0.0, 1.5, 0.7,0.1,0.1]
         self._franka.set_joint_positions(self.last_joint_positions)
+        
        
 
         #----------------------------------------------------------------------------------------------------------------
@@ -451,41 +452,41 @@ class PandaAIS(BaseSample):
 
         #----------------------------------------------------------------------------------------------------------------------------------
      
-        def set_or_add_translate_op(xformable, increasing):
-            # Look for an existing translate operation
-            translate_op = None
-            for op in xformable.GetOrderedXformOps():
-                if op.GetOpType() == UsdGeom.XformOp.TypeTranslate:
-                    translate_op = op
-                    break
+        # def set_or_add_translate_op(xformable, increasing):
+        #     # Look for an existing translate operation
+        #     translate_op = None
+        #     for op in xformable.GetOrderedXformOps():
+        #         if op.GetOpType() == UsdGeom.XformOp.TypeTranslate:
+        #             translate_op = op
+        #             break
 
-            # Modify existing translate op if found, or add a new one
-            if translate_op:
-                 # Add the new translation to the existing one
-                current_translation = translate_op.Get()
-                if increasing:
-                    updated_translation = Gf.Vec3d(
-                        current_translation[0],
-                        current_translation[1] + 10,  # Accumulate movement
-                        current_translation[2]
-                    )
-                    translate_op.Set(updated_translation)
-                    print("Updated existing translate operation to increasing:", updated_translation)
-                else:
-                    updated_translation = Gf.Vec3d(
-                        current_translation[0],
-                        current_translation[1] - 10,  # Accumulate movement
-                        current_translation[2]
-                    )
-                # Update the translation operation
-                    translate_op.Set(updated_translation)
-                # translate_op.Set(new_position)
-                    #print("Updated existing translate operation.", updated_translation)
-            else:
-                # Add a new translation operation
-                translate_op = xformable.AddTranslateOp()
-                translate_op.Set(Gf.Vec3d(0, 0, 0))
-                print("Added new translate operation.")     
+        #     # Modify existing translate op if found, or add a new one
+        #     if translate_op:
+        #          # Add the new translation to the existing one
+        #         current_translation = translate_op.Get()
+        #         if increasing:
+        #             updated_translation = Gf.Vec3d(
+        #                 current_translation[0],
+        #                 current_translation[1] + 10,  # Accumulate movement
+        #                 current_translation[2]
+        #             )
+        #             translate_op.Set(updated_translation)
+        #             print("Updated existing translate operation to increasing:", updated_translation)
+        #         else:
+        #             updated_translation = Gf.Vec3d(
+        #                 current_translation[0],
+        #                 current_translation[1] - 10,  # Accumulate movement
+        #                 current_translation[2]
+        #             )
+        #         # Update the translation operation
+        #             translate_op.Set(updated_translation)
+        #         # translate_op.Set(new_position)
+        #             #print("Updated existing translate operation.", updated_translation)
+        #     else:
+        #         # Add a new translation operation
+        #         translate_op = xformable.AddTranslateOp()
+        #         translate_op.Set(Gf.Vec3d(0, 0, 0))
+        #         print("Added new translate operation.")     
                 
         # #----------------------------------------------------------------------------------------------------------------------------------
         
@@ -600,7 +601,7 @@ class PandaAIS(BaseSample):
 
 
 
-
+        
         try:
             # Clear the receive buffer 
             self._client.setblocking(0)
@@ -698,7 +699,7 @@ class PandaAIS(BaseSample):
                 print("nparray_new: ", nparray_new[0], nparray_new[1])
                 bottle_position = np.array([nparray_new[0], nparray_new[1], 0.91567])
                 self._bottle.set_world_pose(position=bottle_position)
-                tolerance = 1e-2
+                tolerance = 1e-4
                
                 #--------------------stopper MOVEMENT get errors when it is executed under the daza reception here----------------------------------
                 # stage = omni.usd.get_context().get_stage()
@@ -772,14 +773,18 @@ class PandaAIS(BaseSample):
                 if abs(bottle_position[0] - 0.80578) < tolerance and abs(bottle_position[1] + 0.43033) < tolerance:
         
                     print("Stopper begins to move")
-                    self._stopperleft.set_world_pose(position=[1.184,-1.3028,0.79715])
                     self._stopperright.set_world_pose(position=[1.165,-1.2586,0.79715])
+                    self._stopperleft.set_world_pose(position=[1.184,-1.3028,0.79715])
                     self._bottle.set_world_pose(position=bottle_position)
-                elif abs(bottle_position[0] - 0.80578) < tolerance and abs(bottle_position[1] + 0.431) < tolerance:
+                elif abs(bottle_position[0] - 0.80578) < tolerance and bottle_position[1]  <= -0.431 and bottle_position[1] >= -0.49609:
                     print("Stopper ends to move")
-                    self._stopperright.set_world_pose(position=[1.184,-1.3028,0.79715])
-                    self._stopperleft.set_world_pose(position=[1.165,-1.2586,0.79715])
+                    self._stopperright.set_world_pose(position=[1.184,-1.2586,0.79715])
+                    self._stopperleft.set_world_pose(position=[1.184,-1.3028,0.79715])
                     self._bottle.set_world_pose(position=bottle_position)
+                elif abs(bottle_position[0] - 0.80578) < tolerance and abs(bottle_position[1] + 0.49609) < tolerance:
+                    self._stopperright.set_world_pose(position=[1.184,-1.2586,0.79715])
+                    self._stopperleft.set_world_pose(position=[1.165,-1.3028,0.79715])
+
                
 
                     
