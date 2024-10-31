@@ -59,6 +59,52 @@ sudo apt autoclean
 
 lib: https://docs.omniverse.nvidia.com/py/isaacsim/source/extensions/omni.isaac.core/docs/index.html#robots
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+### Run Simulation in IssacSim
+# 1. Robot Movement
+   ```
+   cd ziyu/robotControlProgram/build
+   ```
+   enter the robot control folder
+2. Turn on IssacSim, impoert the project: PandaAIS
+3. Change the environment light
+4. Press F to center the view.
+5. Press Start Run button in Issac.
+6. run the pickup and place program firstly in the above file-located Terminal:
+   ```
+   ./bottleplacingloopPICKPALCEbottle 192.168.80.105
+
+   ```
+7. Check the simulation. It should work now.
+# 2. Bottle Movement
+
+1. file path:
+   ```
+   cd ziyu/CSCMQTTIssacSim
+   ```
+2. Close the Issac Sim Simulator, then open it again to reset.
+3. Open the PLC control prog on HIWI_51 Windows Computer:
+   	Desktop:Ziyu Li folder->myJoghurt folder-> KIFabrik->IEC -> sln project
+4. open the project, import, run.
+5. Press the Stop button on myJughurt table -> Press init button and wait-> Press Start 
+6. Repeat step 2,3,4,5 above.
+7. run the prog:
+```
+   dotnet run
+
+   ```
+8. Put bottle on belt 1
+9. Ckeck the Simulation
+# 3. Robot fetch the bottle.
+1. All same as 1. Robot Movement
+2. only step 6 changes: run the fetch program in the above file-located Terminal:
+   ```
+   ./bottleplacingloopFetchbottle 192.168.80.105
+
+   ```
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### WIFI Configuration
 #1. check all the wlan infos
 ```
