@@ -61,11 +61,11 @@ lib: https://docs.omniverse.nvidia.com/py/isaacsim/source/extensions/omni.isaac.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Run Simulation in IssacSim
-## 1. Robot Movement
-   ```
+### 1. Robot Movement
+1. enter the robot control folder
+```
    cd ziyu/robotControlProgram/build
    ```
-   enter the robot control folder
 2. Turn on IssacSim, impoert the project: PandaAIS
 3. Change the environment light
 4. Press F to center the view.
