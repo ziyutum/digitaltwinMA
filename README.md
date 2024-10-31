@@ -60,8 +60,8 @@ sudo apt autoclean
 lib: https://docs.omniverse.nvidia.com/py/isaacsim/source/extensions/omni.isaac.core/docs/index.html#robots
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
-### Run Simulation in IssacSim
-# 1. Robot Movement
+# Run Simulation in IssacSim
+## 1. Robot Movement
    ```
    cd ziyu/robotControlProgram/build
    ```
@@ -76,7 +76,7 @@ lib: https://docs.omniverse.nvidia.com/py/isaacsim/source/extensions/omni.isaac.
 
    ```
 7. Check the simulation. It should work now.
-# 2. Bottle Movement
+## 2. Bottle Movement
 
 1. file path:
    ```
@@ -95,7 +95,7 @@ lib: https://docs.omniverse.nvidia.com/py/isaacsim/source/extensions/omni.isaac.
    ```
 8. Put bottle on belt 1
 9. Ckeck the Simulation
-# 3. Robot fetch the bottle.
+## 3. Robot fetch the bottle.
 1. All same as 1. Robot Movement
 2. only step 6 changes: run the fetch program in the above file-located Terminal:
    ```
